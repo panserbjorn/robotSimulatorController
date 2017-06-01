@@ -11,7 +11,6 @@ using namespace std;
 
 extern "C" {
      #include "extApi.h"
-   /*#include "extApiCustom.h" if you wanna use custom remote API functions! */
 }
 
 int main(int argc, char** argv)
@@ -30,8 +29,11 @@ int main(int argc, char** argv)
 		simxInt leftMotorHandle, rightMotorHandle;
 		int rightMotorSpeed,leftMotorSpeed;
 
+		//Recupero los motores del bubbleRob
 		simxGetObjectHandle(clientID,"bubbleRob_leftMotor",&leftMotorHandle,simx_opmode_blocking);
 		simxGetObjectHandle(clientID,"bubbleRob_rightMotor",&rightMotorHandle,simx_opmode_blocking);
+
+		//Determino cual es la dirección en la que el usuario desea ir
 		while (respuesta){
 			switch (respuesta){
 				case FORWARD_MOVEMENT:
@@ -64,11 +66,18 @@ int main(int argc, char** argv)
 					break;
 			}
 
+			//Establesco la velocidad en el simulador (una para el motor izquierdo y otro para el derecho)
 			simxSetJointTargetVelocity(clientID,leftMotorHandle,leftMotorSpeed,simx_opmode_oneshot);
 			simxSetJointTargetVelocity(clientID,rightMotorHandle,rightMotorSpeed,simx_opmode_oneshot);
+
+			//Pido una nueva reapuesta para indicar la dirección
 			cin>> respuesta;
 		}
+
+		//Detengo la simulación
         simxStopSimulation(clientID, simx_opmode_oneshot_wait);
   }
+
+  //Cierro la conexión con el simulador
   simxFinish(clientID);
 }
