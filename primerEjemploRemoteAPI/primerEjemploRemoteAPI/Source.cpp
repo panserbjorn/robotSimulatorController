@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 using namespace std;
+
 //#define FORWARD_MOVEMENT 1
 //#define BACKWARD_MOVEMENT 2
 //#define FORWARD_LEFT_MOVEMENT 3
@@ -15,6 +16,7 @@ using namespace std;
 
 extern "C" {
 #include "extApi.h"
+#include "ControladorDeMovimientos.h"
 }
 
 int main(int argc, char** argv)
@@ -44,10 +46,19 @@ int main(int argc, char** argv)
 		//Variables de los motores del modelo
 		simxInt leftUpperMotor, leftLowerMotor, rightUpperMotor, rightLowerMotor;
 		//Variables para guardar las velocidades de los motores
-		int leftUpperSpeed, leftLowerSpeed, rightUpperSpeed, rightLowerSpeed;
+		simxGetObjectHandle(clientID, "LUM", &leftUpperMotor, simx_opmode_blocking);
+		simxGetObjectHandle(clientID, "LLM", &leftLowerMotor, simx_opmode_blocking);
+		simxGetObjectHandle(clientID, "RUM", &rightUpperMotor, simx_opmode_blocking);
+		simxGetObjectHandle(clientID, "RLM", &rightLowerMotor, simx_opmode_blocking);
 
+		int leftUpperSpeed, leftLowerSpeed, rightUpperSpeed, rightLowerSpeed;
+		Controller *contr = new Controller(clientID, leftUpperMotor, leftLowerMotor, rightUpperMotor, rightLowerMotor);
 		//TODO Falta traer los handlers de los motores de mi modelo
 
+		simxSetJointTargetVelocity(clientID, leftLowerMotor, 0, simx_opmode_oneshot);
+		simxSetJointTargetVelocity(clientID, leftUpperMotor, 0, simx_opmode_oneshot);
+		simxSetJointTargetVelocity(clientID, rightLowerMotor, 0, simx_opmode_oneshot);
+		simxSetJointTargetVelocity(clientID, rightUpperMotor, 0, simx_opmode_oneshot);
 		//Determino cual es la dirección en la que el usuario desea ir
 		while (respuesta) {
 			//Código del BubbleRob que determina la velocidad de los motores
@@ -85,23 +96,24 @@ int main(int argc, char** argv)
 			//TODO estas son solo algunas de las acciones, debo definir otras más
 			switch (respuesta) {
 			case RIGHT_CONTRACT:
-				rightUpperSpeed = -4;
-				rightLowerSpeed = 4;
+				contr->MoverPierna(Movimiento::Contraer, Hemisferio::Derecho);
 				break;
 			case RIGHT_STRETCH:
-				rightUpperSpeed = 0;
-				rightLowerSpeed = -4;
+				contr->MoverPierna(Movimiento::Estirar, Hemisferio::Derecho);
 				break;
 			case LEFT_CONTRACT:
-				leftUpperSpeed = -4;
-				leftLowerSpeed = 4;
+				contr->MoverPierna(Movimiento::Contraer, Hemisferio::Izquierdo);
 				break;
 			case LEFT_STRETCH:
-				leftUpperSpeed = 0;
-				leftLowerSpeed = -4;
+				contr->MoverPierna(Movimiento::Estirar, Hemisferio::Izquierdo);
 				break;
 			default:
-				leftUpperSpeed = leftLowerSpeed = rightUpperSpeed = rightLowerSpeed = 0;
+				simxStopSimulation(clientID, simx_opmode_oneshot);
+				simxSetJointTargetVelocity(clientID, leftLowerMotor, 0, simx_opmode_oneshot);
+				simxSetJointTargetVelocity(clientID, leftUpperMotor, 0, simx_opmode_oneshot);
+				simxSetJointTargetVelocity(clientID, rightLowerMotor, 0, simx_opmode_oneshot);
+				simxSetJointTargetVelocity(clientID, rightUpperMotor, 0, simx_opmode_oneshot);
+				simxStartSimulation(clientID, simx_opmode_oneshot_wait);
 				break;
 			}
 

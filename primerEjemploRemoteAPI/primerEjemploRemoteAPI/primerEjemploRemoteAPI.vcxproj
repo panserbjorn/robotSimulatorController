@@ -64,11 +64,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ControladorDeMovimientos.cpp" />
     <ClCompile Include="remoteApi\extApi.c" />
     <ClCompile Include="remoteApi\extApiPlatform.c" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ControladorDeMovimientos.h" />
     <ClInclude Include="remoteApi\extApi.h" />
     <ClInclude Include="remoteApi\extApiPlatform.h" />
   </ItemGroup>

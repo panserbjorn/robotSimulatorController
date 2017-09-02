@@ -24,12 +24,18 @@
     <ClCompile Include="remoteApi\extApiPlatform.c">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
+    <ClCompile Include="ControladorDeMovimientos.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="remoteApi\extApi.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="remoteApi\extApiPlatform.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="ControladorDeMovimientos.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>

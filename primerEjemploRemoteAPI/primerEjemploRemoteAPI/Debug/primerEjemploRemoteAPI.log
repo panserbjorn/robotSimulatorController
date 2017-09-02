@@ -1,26 +1,20 @@
-﻿Compilación iniciada a las 30/08/2017 16:22:13.
-     1>Proyecto "C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\primerEjemploRemoteAPI\primerEjemploRemoteAPI.vcxproj" en el nodo 2 (Rebuild destinos).
+﻿Compilación iniciada a las 02/09/2017 20:17:48.
+     1>Proyecto "C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\primerEjemploRemoteAPI\primerEjemploRemoteAPI.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I.\remoteApi /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D NON_MATLAB_PARSING /D MAX_EXT_API_CONNECTIONS=255 /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TC /analyze- /errorReport:prompt remoteApi\extApi.c remoteApi\extApiPlatform.c
-         extApiPlatform.c
-         Adding library: Winmm.lib
-         Adding library: Ws2_32.lib
-     1>c:\users\joaqui\documents\robotsimulatorcontroller\primerejemploremoteapi\primerejemploremoteapi\remoteapi\extapiplatform.c(231): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-         c:\program files (x86)\windows kits\10\include\10.0.10150.0\ucrt\stdio.h(205): note: vea la declaración de 'fopen'
-         extApi.c
-         Generando código...
          C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\CL.exe /c /I.\remoteApi /I.\include /ZI /nologo /W3 /WX- /Od /Oy- /D NON_MATLAB_PARSING /D MAX_EXT_API_CONNECTIONS=255 /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\" /Fd"Debug\vc140.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
          Source.cpp
-     1>c:\users\joaqui\documents\robotsimulatorcontroller\primerejemploremoteapi\primerejemploremoteapi\source.cpp(70): warning C4244: 'argumento': conversión de 'int' a 'simxFloat'; posible pérdida de datos
-     1>c:\users\joaqui\documents\robotsimulatorcontroller\primerejemploremoteapi\primerejemploremoteapi\source.cpp(71): warning C4244: 'argumento': conversión de 'int' a 'simxFloat'; posible pérdida de datos
+     1>c:\users\joaqui\documents\robotsimulatorcontroller\primerejemploremoteapi\primerejemploremoteapi\source.cpp(54): warning C4101: 'rightUpperSpeed': variable local sin referencia
+     1>c:\users\joaqui\documents\robotsimulatorcontroller\primerejemploremoteapi\primerejemploremoteapi\source.cpp(54): warning C4101: 'rightLowerSpeed': variable local sin referencia
+     1>c:\users\joaqui\documents\robotsimulatorcontroller\primerejemploremoteapi\primerejemploremoteapi\source.cpp(54): warning C4101: 'leftLowerSpeed': variable local sin referencia
+     1>c:\users\joaqui\documents\robotsimulatorcontroller\primerejemploremoteapi\primerejemploremoteapi\source.cpp(54): warning C4101: 'leftUpperSpeed': variable local sin referencia
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.lib" /MACHINE:X86 Debug\extApi.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.lib" /MACHINE:X86 Debug\ControladorDeMovimientos.obj
+         Debug\extApi.obj
          Debug\extApiPlatform.obj
          Debug\Source.obj
-            Creando biblioteca C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.lib y objeto C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.exp
          primerEjemploRemoteAPI.vcxproj -> C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\Debug\primerEjemploRemoteAPI.exe
-     1>Compilación del proyecto terminada "C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\primerEjemploRemoteAPI\primerEjemploRemoteAPI.vcxproj" (Rebuild destinos).
+     1>Compilación del proyecto terminada "C:\Users\Joaqui\Documents\robotSimulatorController\primerEjemploRemoteAPI\primerEjemploRemoteAPI\primerEjemploRemoteAPI.vcxproj" (Build destinos).
 
 Compilación correcta.
 
-Tiempo transcurrido 00:00:02.88
+Tiempo transcurrido 00:00:01.19
