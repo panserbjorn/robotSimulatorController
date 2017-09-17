@@ -43,3 +43,8 @@ void Controller::MoverPierna(Movimiento m, Hemisferio h) {
 		simxSetJointTargetVelocity(ClientID, rightUpperMotor, upperSpeed, simx_opmode_oneshot);
 	}
 }
+
+bool Controller::Erguido()
+{
+	return true;
+}

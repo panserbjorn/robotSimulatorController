@@ -65,13 +65,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Controlador.cpp" />
     <ClCompile Include="ControladorDeMovimientos.cpp" />
+    <ClCompile Include="Orquestador.cpp" />
+    <ClCompile Include="OrquestadorAsincronico.cpp" />
+    <ClCompile Include="RecuperadorInstrucciones.cpp" />
     <ClCompile Include="remoteApi\extApi.c" />
     <ClCompile Include="remoteApi\extApiPlatform.c" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Controlador.h" />
     <ClInclude Include="ControladorDeMovimientos.h" />
+    <ClInclude Include="Orquestador.h" />
+    <ClInclude Include="OrquestadorAsincronico.h" />
+    <ClInclude Include="RecuperadorInstrucciones.h" />
     <ClInclude Include="remoteApi\extApi.h" />
     <ClInclude Include="remoteApi\extApiPlatform.h" />
   </ItemGroup>
