@@ -1,8 +1,12 @@
 #pragma once
-#include "extApi.h"
+//#include "extApi.h"
 #include <iostream>
 #include "ControladorDeMovimientos.h"
 using namespace std;
+
+extern "C" {
+#include "extApi.h"
+}
 
 //#define FORWARD_MOVEMENT 1
 //#define BACKWARD_MOVEMENT 2
@@ -15,6 +19,7 @@ using namespace std;
 #define RIGHT_STRETCH 2
 #define LEFT_CONTRACT 3
 #define LEFT_STRETCH 4
+
 
 class OrquestadorAsinc {
 	int portNb;

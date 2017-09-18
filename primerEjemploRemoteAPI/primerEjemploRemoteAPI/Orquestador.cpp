@@ -10,5 +10,5 @@ Orquest::Orquest()
 
 void Orquest::Run()
 {
-	//TODO este es el'lugar en donde va a estar todo el código que hace que el simulador se mueva
+	//TODO este es el lugar en donde va a estar todo el código que hace que el simulador se mueva
 }

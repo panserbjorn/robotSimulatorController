@@ -2,7 +2,7 @@
 
 OrquestadorAsinc::OrquestadorAsinc()
 {
-	this->portNb = 1997;
+	this->portNb = 19997;
 	this->clientID = simxStart("127.0.0.1", portNb, true, true, 5000, 5);
 
 }

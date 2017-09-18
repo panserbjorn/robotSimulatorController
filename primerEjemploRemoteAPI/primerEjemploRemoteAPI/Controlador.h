@@ -11,10 +11,10 @@ using namespace std;
 
 class Controlador {
 	int corridaActual;
-	list<list<tuple<Movimiento, Tiempo>>> corridas;
+	list<list<tuple<Movimiento, Tiempo>*>> corridas;
 public:
 	Controlador();
 	bool HayCorridas();
-	list<tuple<Movimiento, Tiempo>> siguienteCorrida();
+	list<tuple<Movimiento, Tiempo>*> siguienteCorrida();
 
 };
