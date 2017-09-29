@@ -16,9 +16,15 @@ extern "C" {
 //#define BACKWARD_RIGHT_MOVEMENT 6
 //#define STOP 7
 #define RIGHT_CONTRACT 1
-#define RIGHT_STRETCH 2
-#define LEFT_CONTRACT 3
-#define LEFT_STRETCH 4
+#define RIGHT_STRETCH 2	
+#define RIGHT_AHEAD 3
+#define RIGHT_BACK 4
+#define LEFT_CONTRACT 5
+#define LEFT_STRETCH 6
+#define LEFT_AHEAD 7
+#define LEFT_BACK 8
+#define STOP_L 9
+#define STOP_R 10
 
 
 class OrquestadorAsinc {

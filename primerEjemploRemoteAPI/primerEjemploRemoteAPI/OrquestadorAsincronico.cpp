@@ -35,7 +35,6 @@ void OrquestadorAsinc::Run()
 
 		int leftUpperSpeed, leftLowerSpeed, rightUpperSpeed, rightLowerSpeed;
 		Controller *contr = new Controller(clientID, leftUpperMotor, leftLowerMotor, rightUpperMotor, rightLowerMotor);
-		//TODO Falta traer los handlers de los motores de mi modelo
 
 		simxSetJointTargetVelocity(clientID, leftLowerMotor, 0, simx_opmode_oneshot);
 		simxSetJointTargetVelocity(clientID, leftUpperMotor, 0, simx_opmode_oneshot);
@@ -75,7 +74,6 @@ void OrquestadorAsinc::Run()
 			break;
 			}*/
 
-			//TODO estas son solo algunas de las acciones, debo definir otras más
 			switch (respuesta) {
 			case RIGHT_CONTRACT:
 				contr->MoverPierna(Movimiento::Contraer, Hemisferio::Derecho);
@@ -88,6 +86,24 @@ void OrquestadorAsinc::Run()
 				break;
 			case LEFT_STRETCH:
 				contr->MoverPierna(Movimiento::Estirar, Hemisferio::Izquierdo);
+				break;
+			case RIGHT_AHEAD:
+				contr->MoverPierna(Movimiento::Adelantar, Hemisferio::Derecho);
+				break;
+			case RIGHT_BACK:
+				contr->MoverPierna(Movimiento::Retroceder, Hemisferio::Derecho);
+				break;
+			case LEFT_AHEAD:
+				contr->MoverPierna(Movimiento::Adelantar, Hemisferio::Izquierdo);
+				break;
+			case LEFT_BACK:
+				contr->MoverPierna(Movimiento::Retroceder, Hemisferio::Izquierdo);
+				break;
+			case STOP_L:
+				contr->MoverPierna(Movimiento::Frenar, Hemisferio::Izquierdo);
+				break;
+			case STOP_R:
+				contr->MoverPierna(Movimiento::Frenar, Hemisferio::Derecho);
 				break;
 			default:
 				simxStopSimulation(clientID, simx_opmode_oneshot);
@@ -104,7 +120,6 @@ void OrquestadorAsinc::Run()
 			/*simxSetJointTargetVelocity(clientID, leftMotorHandle, leftMotorSpeed, simx_opmode_oneshot);
 			simxSetJointTargetVelocity(clientID, rightMotorHandle, rightMotorSpeed, simx_opmode_oneshot);*/
 
-			//TODO Falta enviar la señal de las velocidades a los motores en el simulador
 
 			//Pido una nueva respuesta para indicar la dirección
 			cin >> respuesta;
